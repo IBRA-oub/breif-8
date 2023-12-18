@@ -16,6 +16,7 @@ class ServiceUser extends DataBase implements InterfaceUserService{
         $adrId=$user->getAdrId();
         $agencyId = $user->getAgencyId();
 
+    
 
         $sql="INSERT INTO users(username,password,genre,adrId,agencyId,delete_check) VALUES ( :username, :password, :genre,:adrId,:agencyId,1)";
 

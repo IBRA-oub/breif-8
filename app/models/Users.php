@@ -6,14 +6,14 @@ private $id;
 private $username;
 private $password;
 private $genre;
-private $adrId;
+private $adress;
 private $agencyId;
-public function __construct($id, $username, $password, $genre,$adrId,$agencyId){
+public function __construct($id, $username, $password, $genre, Adress $adress,$agencyId){
     $this->id = $id;
     $this->username = $username;
     $this->password = $password;
     $this->genre = $genre;
-    $this->adrId = $adrId;
+    $this->adress = $adress;
     $this->agencyId = $agencyId;
     
 }
@@ -31,7 +31,7 @@ public function getUsername(){
 
 public function setUsername($username){
 
-    $this->username= $username;
+    $this->username = $username;
 }
 
 public function getPassword(){
@@ -53,7 +53,7 @@ public function setGenre($genre){
 }
 
 public function getAdrId(){
-    return $this->adrId;
+    return $this->adress;
 }
 
 
