@@ -1,5 +1,7 @@
 <?php
 
+require('dataBase.php');
+
 class Users extends DataBase {
 
 private $id;
@@ -8,8 +10,8 @@ private $password;
 private $genre;
 private $adress;
 private $agencyId;
-public function __construct($id, $username, $password, $genre, Adress $adress,$agencyId){
-    $this->id = $id;
+public function __construct( $username, $password, $genre, Adress $adress,$agencyId){
+   
     $this->username = $username;
     $this->password = $password;
     $this->genre = $genre;
@@ -52,7 +54,7 @@ public function setGenre($genre){
     $this->genre = $genre;
 }
 
-public function getAdrId(){
+public function getAdress(){
     return $this->adress;
 }
 

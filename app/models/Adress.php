@@ -9,8 +9,8 @@ class Adress{
     private $email;
     private $phone;
 
-    public function __construct( $id, $ville, $quartier, $rue, $codePostal, $email, $phone){
-        $this->id = $id;
+    public function __construct(  $ville, $quartier, $rue, $codePostal, $email, $phone){
+        
         $this->ville = $ville;
         $this->quartier = $quartier;
         $this->rue = $rue;
@@ -25,9 +25,7 @@ class Adress{
 
     }
 
-    public function setId($id){
-        $this->id = $id;
-    }
+    
 
     public function getVille(){
         return $this->ville;
