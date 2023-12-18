@@ -1,8 +1,8 @@
 <?php
 
 
-require('InterfaceUserService.php');
-require('../../models/Users.php');
+require_once('InterfaceUserService.php');
+require_once('../../models/Users.php');
 
 class ServiceUser extends DataBase implements InterfaceUserService{
     public function insertUser(Users $user){
@@ -27,6 +27,8 @@ class ServiceUser extends DataBase implements InterfaceUserService{
         $stmt->bindParam(':email',$email);
         $stmt->bindParam(':phone',$phone);
 
+        $stmt->execute();
+
         $adressId = $pdo->lastInsertId();
 
         $username = $user->getUsername();
@@ -39,7 +41,7 @@ class ServiceUser extends DataBase implements InterfaceUserService{
 
     
 
-        $sqlU="INSERT INTO users(username,password,genre,adrId,agencyId,delete_check) VALUES ( :username, :password, :genre,:adrId,:agencyId,1)";
+        $sqlU="INSERT INTO users(username,pw,gendre,adrId,agencyId,delete_check) VALUES ( :username, :password, :genre,:adrId,:agencyId,1)";
 
         $stmt = $pdo->prepare($sqlU);
         

@@ -1,8 +1,8 @@
 <?php
 
-require('dataBase.php');
 
-class Users extends DataBase {
+
+class Users  {
 
 private $id;
 private $username;

@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../Controlles/UserController/UserControlle.php" method="post">
+    <form action="../Controlles/UserController/UserControlle.php" method="POST">
         <button type="submit">submit</button>
     </form>
 </body>
