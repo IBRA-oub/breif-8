@@ -3,6 +3,7 @@
 
 require_once('InterfaceUserService.php');
 require_once('../../models/Users.php');
+require_once('../../models/dataBase.php');
 
 class ServiceUser extends DataBase implements InterfaceUserService{
     public function insertUser(Users $user){
@@ -52,6 +53,9 @@ class ServiceUser extends DataBase implements InterfaceUserService{
         $stmt->bindParam(':agencyId',$agencyId);
 
         $stmt->execute();
+
+        $userId = $pdo->lastInsertId();
+        return $userId;
 
     }
 
