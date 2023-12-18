@@ -10,13 +10,18 @@ class ServiceAgence extends  DataBase implements InterfaceAgenceService{
 
         $longitude = $agence->getLongitude();
         $latitude = $agence->getLatitude();
+        $bankId = $agence->getBankId();
+        $adrId = $agence->getBankId();
 
-        $sql="INSERT INTO agency (longitude, latitude) VALUES (:longitude,latitude);";
+
+        $sql="INSERT INTO agency (longitude, latitude,bankId,adrId) VALUES (:longitude,:latitude,:bankId,:adrId);";
 
         $stmt = $pdo->prepare($sql);
 
         $stmt->bindParam(':longitude',$longitude);
         $stmt->bindParam(':latitude',$latitude);
+        $stmt->bindParam(':bankId',$bankId);
+        $stmt->bindParam(':adrId',$adrId);
 
         $stmt->execute();
 
@@ -27,14 +32,18 @@ class ServiceAgence extends  DataBase implements InterfaceAgenceService{
         $id = $agence->getId();
         $longitude = $agence->getLongitude();
         $latitude = $agence->getLatitude();
+        $bankId = $agence->getBankId();
+        $adrId = $agence->getBankId();
 
-        $sql="UPDATE agency SET longitude=:longitude, latitude=:latitude WHERE id=:id";
+        $sql="UPDATE agency SET longitude=:longitude, latitude=:latitude, bankId=:bankId, adrId=:adrId WHERE id=:id";
 
         $stmt = $pdo->prepare($sql);
 
         $stmt->bindParam(':id',$id);
         $stmt->bindParam(':longitude',$longitude);
         $stmt->bindParam(':latitude',$latitude);
+        $stmt->bindParam(':bankId',$bankId);
+        $stmt->bindParam(':adrId',$adrId);
 
         $stmt->execute();
     }

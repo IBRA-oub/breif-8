@@ -1,7 +1,7 @@
 <?php
 
 
-interface InterfaceAgenceService{
+interface InterfaceBankService{
 
     function insertBank(Bank $bank);
     function updateBank(Bank $bank);

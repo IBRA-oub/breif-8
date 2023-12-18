@@ -4,11 +4,15 @@ class Agence{
     private $id;
     private $longitude;
     private $latitude;
+    private $bankId;
+    private $adrId;
 
-    public function __construct($id, $longitude, $latitude){
+    public function __construct($id, $longitude, $latitude,$bankId, $adrId){
         $this->id = $id;
         $this->longitude = $longitude;
         $this->latitude = $latitude;
+        $this->bankId = $bankId;
+        $this->adrId = $adrId;
 
     }
 
@@ -38,6 +42,15 @@ class Agence{
     public function setLatitude ($latitude ){
         $this->latitude  = $latitude ;
     }
+
+    public function getBankId(){
+        return $this->bankId;
+    }
+    public function getAdrId(){
+        return $this->adrId ;
+    }
+
+
 
 
 }
