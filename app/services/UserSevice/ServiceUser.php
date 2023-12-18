@@ -13,15 +13,19 @@ class ServiceUser extends DataBase implements InterfaceUserService{
         $username = $user->getUsername();
         $password = $user->getPassword();
         $genre = $user->getGenre();
-        
+        $adrId=$user->getAdrId();
+        $agencyId = $user->getAgencyId();
 
-        $sql="INSERT INTO users(username,adress,password,genre,delete_check) VALUES ( :username, :password, :genre,1)";
+
+        $sql="INSERT INTO users(username,password,genre,adrId,agencyId,delete_check) VALUES ( :username, :password, :genre,:adrId,:agencyId,1)";
 
         $stmt = $pdo->prepare($sql);
         
         $stmt->bindParam(':username',$username);
         $stmt->bindParam(':password',$password);
         $stmt->bindParam(':genre',$genre);
+        $stmt->bindParam(':adrId',$adrId);
+        $stmt->bindParam(':agencyId',$agencyId);
 
         $stmt->execute();
 
@@ -35,14 +39,18 @@ class ServiceUser extends DataBase implements InterfaceUserService{
         $username = $user->getUsername();
         $password = $user->getPassword();
         $genre = $user->getGenre();
+        $adrId=$user->getAdrId();
+        $agencyId = $user->getAgencyId();
 
-        $sql="UPDATE users SET  username=:username, password=:password, genre=:genre WHERE id=:id)";
+        $sql="UPDATE users SET  username=:username, password=:password, genre=:genre, adrId=:adrId, agencyId=:agencyId WHERE id=:id)";
 
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id',$id);
         $stmt->bindParam(':username',$username);   
         $stmt->bindParam(':password',$password);
         $stmt->bindParam(':genre',$genre);
+        $stmt->bindParam(':adrId',$adrId);
+        $stmt->bindParam(':agencyId',$agencyId);
 
         $stmt->execute();
 

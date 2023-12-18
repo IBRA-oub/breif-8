@@ -6,15 +6,15 @@ private $id;
 private $username;
 private $password;
 private $genre;
-private $adreesId;
-
-private $adressId;
-public function __construct($id, $username,$adressId, $password, $genre){
+private $adrId;
+private $agencyId;
+public function __construct($id, $username, $password, $genre,$adrId,$agencyId){
     $this->id = $id;
     $this->username = $username;
-    $this->adressId = $adressId;
     $this->password = $password;
     $this->genre = $genre;
+    $this->adrId = $adrId;
+    $this->agencyId = $agencyId;
     
 }
 
@@ -22,10 +22,7 @@ public function getId(){
     return $this->id;
 }
 
-public function setId($id){
 
-    $this->id = $id;
-}
 
 
 public function getUsername(){
@@ -55,6 +52,14 @@ public function setGenre($genre){
     $this->genre = $genre;
 }
 
+public function getAdrId(){
+    return $this->adrId;
+}
+
+
+public function getAgencyId(){
+    return $this->agencyId;
+}
 
 
     
