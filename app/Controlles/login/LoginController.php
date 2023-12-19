@@ -2,12 +2,12 @@
 
 require_once ('../../models/dataBase.php');
 
-// if(isset($_POST['login'])){
+if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-// $username = $_POST['name'];
-$username = 'bb';
-// $password = $_POST['password'];
-$password = 'aaa';
+$username = $_POST['username'];
+// $username = 'bb';
+$password = $_POST['pw'];
+// $password = 'aaa';
 
 $con= new DataBase();
 $pdo = $con->connection();
@@ -35,7 +35,7 @@ if($row){
 
         $roleRow = $roleStmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($roleRow && isset($roleRow['roleName']) && $roleRow['roleName'] == "admin") {
+        if ( $roleRow['roleName'] == "admin") {
             header("location: display.php");
             exit();
         } else {
@@ -48,7 +48,7 @@ if($row){
     }
 }
     
-// }
+}
 
 
 
