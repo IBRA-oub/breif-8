@@ -14,7 +14,7 @@ echo "testing";
     $ville = 'heh';
     $quartie = 'jej';
     $rue = 'jej';
-    $codePostal = '12';
+    $codePostal = '13';
     $email = 'FKKF@djjd.com';
     $phone = '123';
     $role='admin';
