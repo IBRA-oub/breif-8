@@ -33,9 +33,6 @@ try{
      // get user id and insert data into table
     $userId = $service->insertUser($user);
 
-   
-    
-
     $roleofuser= new RoleOfUser($userId,$role);
 
     $userRole= new ServiceRoleOfUser();

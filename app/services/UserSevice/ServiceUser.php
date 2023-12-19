@@ -59,7 +59,7 @@ class ServiceUser extends DataBase implements InterfaceUserService{
 
     }
 
-    function updateUser(Users $user){
+    public function updateUser(Users $user){
 
         $pdo = $this->connection();
 
@@ -105,7 +105,7 @@ class ServiceUser extends DataBase implements InterfaceUserService{
         $stmt->execute();
 
     }
-function deleteUser($id){
+public function deleteUser($id){
 
  $pdo = $this->connection();
 
@@ -117,7 +117,7 @@ function deleteUser($id){
  $stmt->execute();
 
 }
-function displayUser(){
+public function displayUser(){
 
     $pdo=$this->connection();
 
@@ -129,7 +129,56 @@ function displayUser(){
     return $users;
 
 }
+
+// public function getUserName($username,$password){
+//     $pdo=$this->connection();
+
+
+//     $query = "SELECT * FROM users WHERE username = :username and password = :password";
+
+//     $stmt = $pdo->prepare($query);
+
+//     $login=$stmt->execute([
+//         ":username" => $username,
+//         ":password" => $password
+//     ]);
+
+//     if ($login) {
+//         // Utilisez la méthode getRoleByUsername de ServiceUser pour obtenir le rôle de l'utilisateur
+//         $pdo = $this->connection();
+
+//         $query = new roleOfUser();
+
+
+//         if ($roleName == "admin") {
+//             $_SESSION["username"] = $username;
+//             $_SESSION["role"] = "admin";
+//             // redirect("../views/admin/bank.php", false);
+//         } elseif ($roleName == "subadmin") {
+//             $_SESSION["username"] = $username;
+//             $_SESSION["role"] = "subadmin";
+//             // redirect("../views/admin/bank.php", false);
+//         } else {
+//             $_SESSION["username"] = $username;
+//             $_SESSION["role"] = "client";
+//             // redirect("../views/client/index.php?id=" . $loggingUserData->userId, false);
+//         }
+//     } else {
+//         // redirect("../views/login.php", false);
+//     }
+    
+
+//     $data = null;
+
+//     $data = $stmt->fetch(PDO::FETCH_OBJ);
+
+//     $query = null;
+//     $pdo = null;
+//     return $data;
+// }
    
 }
+
+
 
 ?>

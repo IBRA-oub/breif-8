@@ -8,6 +8,8 @@ function updateUser(Users $user);
 function deleteUser($id);
 function displayUser();
 
+// function getUserName($username);
+
 
 
 
